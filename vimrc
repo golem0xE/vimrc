@@ -13,7 +13,7 @@ Bundle 'gmarik/vundle'
 "
 Bundle 'rhysd/vim-clang-format'
 Bundle 'kana/vim-operator-user'
-Bundle 'justmao945/vim-clang'
+Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
 Bundle 'fholgado/minibufexpl.vim'
@@ -110,9 +110,6 @@ hi SyntasticErrorSign ctermfg=9
 hi SyntasticWarningSign ctermfg=yellow
 hi SyntasticStyleErrorSign ctermfg=cyan
 hi SyntasticStyleWarningSign ctermfg=69
-
-" Clang Complete Settings
-let g:clang_cpp_options='-std=c++11'
 
 set conceallevel=2
 set concealcursor=vin
