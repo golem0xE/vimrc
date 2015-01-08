@@ -111,6 +111,12 @@ hi SyntasticWarningSign ctermfg=yellow
 hi SyntasticStyleErrorSign ctermfg=cyan
 hi SyntasticStyleWarningSign ctermfg=69
 
+let g:clang_user_options = '-std=c++11'
+let g:clang_use_library = 1
+let g:clang_memory_percent = 50
+let g:clang_auto_select = 1
+let g:clang_auto_user_options = "compile_commands.json"
+
 set conceallevel=2
 set concealcursor=vin
 let g:clang_snippets=1
