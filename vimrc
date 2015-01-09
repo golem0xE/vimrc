@@ -97,6 +97,7 @@ let g:Tex_SmartKeyDoti = 0
 let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy']
 let g:syntastic_clang_check_config_file ='.syntastic_cfg'
 let g:syntastic_clang_tidy_config_file ='.syntastic_cfg'
+let g:syntastic_cpp_clang_tidy_post_args = "-checks='-misc-use-override,-llvm-namespace-comment'"
 let g:syntastic_cpp_check_header=1
 "let g:syntastic_debug=1
 "let g:syntastic_cpp_clang_check_post_args = '-analyze'
