@@ -94,11 +94,12 @@ set grepprg=grep\ -nH\ $*
 let g:Imap_UsePlaceHolders = 0
 let g:Tex_SmartKeyDoti = 0
 
-"let g:syntastic_debug=1
-let g:syntastic_cpp_checkers = ['clang_check']
-"let g:syntastic_cpp_clang_check_post_args = ""
+let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy']
 let g:syntastic_clang_check_config_file ='.syntastic_cfg'
+let g:syntastic_clang_tidy_config_file ='.syntastic_cfg'
 let g:syntastic_cpp_check_header=1
+"let g:syntastic_debug=1
+"let g:syntastic_cpp_clang_check_post_args = '-analyze'
 
 let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol = '▶✘'
