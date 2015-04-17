@@ -29,6 +29,7 @@ Bundle 'dbakker/vim-projectroot'
 Bundle 'honza/vim-snippets'
 Bundle 'lyuts/vim-rtags'
 Bundle 'gioele/vim-autoswap'
+Bundle 'tpope/vim-dispatch'
 
 " vim-scripts repos
 "Bundle 'AutoClose'
