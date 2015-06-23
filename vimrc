@@ -7,40 +7,39 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My bundles here:
 "
-Bundle 'rhysd/vim-clang-format'
-Bundle 'kana/vim-operator-user'
-Bundle 'Rip-Rip/clang_complete'
-Bundle 'scrooloose/syntastic'
-Bundle 'bling/vim-airline'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'SirVer/ultisnips'
-Bundle 'vim-scripts/grep.vim'
-Bundle 'vim-scripts/Cpp11-Syntax-Support'
-Bundle 'vim-scripts/a.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Raimondi/delimitMate'
-Bundle 'sjbach/lusty'
-Bundle 'dbakker/vim-projectroot'
-Bundle 'honza/vim-snippets'
-Bundle 'lyuts/vim-rtags'
-Bundle 'gioele/vim-autoswap'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-fugitive'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'kana/vim-operator-user'
+Plugin 'Rip-Rip/clang_complete'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'SirVer/ultisnips'
+Plugin 'vim-scripts/grep.vim'
+Plugin 'vim-scripts/a.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Raimondi/delimitMate'
+Plugin 'sjbach/lusty'
+Plugin 'dbakker/vim-projectroot'
+Plugin 'honza/vim-snippets'
+Plugin 'lyuts/vim-rtags'
+Plugin 'gioele/vim-autoswap'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fugitive'
 
 " vim-scripts repos
-"Bundle 'AutoClose'
+"Plugin 'AutoClose'
 
 call vundle#end()
 
 "compiler! gcc
 filetype plugin indent on
-syntax on
 filetype on
+syntax on
 
 set t_Co=256
 let g:airline_powerline_fonts = 1
@@ -60,9 +59,6 @@ set hlsearch
 set hidden
 
 au BufNewFile,BufRead *.lcf set filetype=c
-au BufNewFile,BufRead *.cpp set syntax=cpp11
-au BufNewFile,BufRead *.hpp set syntax=cpp11
-au BufNewFile,BufRead *.h set syntax=cpp11
 au BufNewFile,BufRead *.supp set ft=supp
 set matchpairs+=<:>
 
