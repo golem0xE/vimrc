@@ -30,6 +30,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'lyuts/vim-rtags'
 Bundle 'gioele/vim-autoswap'
 Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-fugitive'
 
 " vim-scripts repos
 "Bundle 'AutoClose'
