@@ -30,6 +30,7 @@ Plugin 'lyuts/vim-rtags'
 Plugin 'gioele/vim-autoswap'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " vim-scripts repos
 "Plugin 'AutoClose'
@@ -158,3 +159,5 @@ autocmd FileType c,cpp,h,hpp map <buffer><Leader>x <Plug>(operator-clang-format)
 
 let delimitMate_expand_cr = 1
 
+"additional vim c++ syntax highlighting
+let g:cpp_class_scope_highlight = 1
