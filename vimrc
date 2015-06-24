@@ -31,6 +31,7 @@ Plugin 'gioele/vim-autoswap'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'flazz/vim-colorschemes'
 
 " vim-scripts repos
 "Plugin 'AutoClose'
@@ -44,7 +45,9 @@ syntax on
 
 set t_Co=256
 let g:airline_powerline_fonts = 1
-highlight Search ctermbg=cyan ctermfg=black
+"highlight Search ctermbg=cyan ctermfg=black
+colorscheme 256-jungle
+"colorscheme blugrine
 
 set tabstop=4
 set softtabstop=4
