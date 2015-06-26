@@ -65,6 +65,14 @@ au BufNewFile,BufRead *.lcf set filetype=c
 au BufNewFile,BufRead *.supp set ft=supp
 set matchpairs+=<:>
 
+" Fix home/end key in all modes
+map <esc>OH <home>
+cmap <esc>OH <home>
+imap <esc>OH <home>
+map <esc>OF <end>
+cmap <esc>OF <end>
+imap <esc>OF <end>
+
 map <C-b> :MBEOpen<CR>
 map <C-c> :MBEClose<CR>
 noremap <silent> <C-f> :Rgrep<cword><CR>
