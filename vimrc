@@ -46,8 +46,7 @@ syntax on
 set t_Co=256
 let g:airline_powerline_fonts = 1
 "highlight Search ctermbg=cyan ctermfg=black
-colorscheme 256-jungle
-"colorscheme blugrine
+colorscheme dante_modified
 
 set tabstop=4
 set softtabstop=4
@@ -109,7 +108,7 @@ let g:syntastic_error_symbol = '▶✘'
 let g:syntastic_warning_symbol = '▶❓'
 let g:syntastic_style_error_symbol = 'ᐅᐅ'
 let g:syntastic_style_warning_symbol = 'ᐅᐅ'
-hi clear SignColumn
+"hi clear SignColumn
 hi SyntasticErrorSign ctermfg=9
 hi SyntasticWarningSign ctermfg=yellow
 hi SyntasticStyleErrorSign ctermfg=cyan
