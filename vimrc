@@ -32,21 +32,23 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'chrisbra/csv.vim'
 
 " vim-scripts repos
 "Plugin 'AutoClose'
 
 call vundle#end()
 
-"compiler! gcc
 filetype plugin indent on
 filetype on
 syntax on
 
 set t_Co=256
-let g:airline_powerline_fonts = 1
-"highlight Search ctermbg=cyan ctermfg=black
 colorscheme dante_modified
+let g:airline_powerline_fonts = 1
+"Display statusline all the time
+set laststatus=2
+let g:airline_theme='dante_modified'
 
 set tabstop=4
 set softtabstop=4
@@ -143,7 +145,7 @@ let g:clang_debug=0
 let g:UltiSnipsListSnippets="<c-l>"
 let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips/UltiSnips'
 
-let g:clang_format#command='clang-format-3.5'
+let g:clang_format#command='clang-format-3.7'
 let g:clang_format#style_options = {
     \ "Language" : "Cpp",
     \ "AccessModifierOffset" : -4,
@@ -164,6 +166,7 @@ let g:clang_format#style_options = {
     \ "SpaceBeforeAssignmentOperators" : "true",
     \ "SpaceInEmptyParentheses" : "false",
     \ "SpacesInParentheses" : "false",
+    \ "Cpp11BracedListStyle" : "true",
     \ "Standard" : "Auto"}
 autocmd FileType c,cpp,h,hpp map <buffer><Leader>x <Plug>(operator-clang-format)
 
