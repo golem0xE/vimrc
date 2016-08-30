@@ -33,6 +33,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'chrisbra/csv.vim'
+Plugin 'vim-scripts/SpellCheck'
+Plugin 'vim-scripts/ingo-library'
 
 " vim-scripts repos
 "Plugin 'AutoClose'
@@ -89,10 +91,15 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 " close buffer
 nmap <silent> <F4> :bd<CR>
-nmap <silent> <F7> :set spell<CR>
-nmap <silent> <C-F7> :set nospell<CR>
+nmap <silent> <F7> :SpellCheck<CR>
+nmap <silent> <F8> :set nospell<CR>
 nmap <silent> <F10> :ClangFormat<CR>
 
+"Highlight errors
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=red
+
+"Alternate search papth tof :A
 let g:alternateSearchPath = 'reg:#\<Source\>$#Include#,reg:#\<Include\>$#Source#'
 
 let Grep_Skip_Dirs = '.svn'
