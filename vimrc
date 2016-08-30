@@ -117,8 +117,11 @@ let g:syntastic_clang_check_config_file ='.syntastic_cfg'
 let g:syntastic_clang_tidy_config_file ='.syntastic_cfg'
 let g:syntastic_cpp_clang_tidy_post_args = "-checks='-misc-use-override,-llvm-namespace-comment'"
 let g:syntastic_cpp_check_header=1
+let g:syntastic_always_populate_loc_list = 0
 "let g:syntastic_debug=1
 "let g:syntastic_cpp_clang_check_post_args = '-analyze'
+"Fix "E924: Current window was closed"
+let g:syntastic_auto_loc_list = 3
 
 let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol = '▶✘'
@@ -181,3 +184,5 @@ let delimitMate_expand_cr = 1
 
 "additional vim c++ syntax highlighting
 let g:cpp_class_scope_highlight = 1
+
+"let g:miniBufExplorerMoreThanOne = 0
