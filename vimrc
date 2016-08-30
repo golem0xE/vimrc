@@ -46,11 +46,11 @@ filetype on
 syntax on
 
 set t_Co=256
-colorscheme dante_modified
+"colorscheme dante_modified
 let g:airline_powerline_fonts = 1
 "Display statusline all the time
 set laststatus=2
-let g:airline_theme='dante_modified'
+"let g:airline_theme='dante_modified'
 
 set tabstop=4
 set softtabstop=4
