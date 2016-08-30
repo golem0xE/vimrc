@@ -152,7 +152,7 @@ let g:clang_debug=0
 let g:UltiSnipsListSnippets="<c-l>"
 let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips/UltiSnips'
 
-let g:clang_format#command='clang-format-3.7'
+let g:clang_format#command='clang-format-3.8'
 let g:clang_format#style_options = {
     \ "Language" : "Cpp",
     \ "AccessModifierOffset" : -4,
