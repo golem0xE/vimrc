@@ -32,7 +32,6 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'chrisbra/csv.vim'
 Plugin 'vim-scripts/SpellCheck'
 Plugin 'vim-scripts/ingo-library'
 
@@ -46,11 +45,11 @@ filetype on
 syntax on
 
 set t_Co=256
-"colorscheme dante_modified
+colorscheme dante_modified
 let g:airline_powerline_fonts = 1
 "Display statusline all the time
 set laststatus=2
-"let g:airline_theme='dante_modified'
+let g:airline_theme='dante_modified'
 
 set tabstop=4
 set softtabstop=4
@@ -99,12 +98,8 @@ nmap <silent> <F10> :ClangFormat<CR>
 hi clear SpellBad
 hi SpellBad cterm=underline,bold ctermfg=red
 
-"Alternate search papth tof :A
-let g:alternateSearchPath = 'reg:#\<Source\>$#Include#,reg:#\<Include\>$#Source#'
-
 let Grep_Skip_Dirs = '.svn'
 let Grep_Skip_Dirs = '.git'
-let Grep_Skip_Dirs = 'Doc'
 let g:C_SourceCodeExtensions  = 'h hpp cc cp cxx cpp CPP c++ C i ii'
 
 let g:tex_flavor='latex'
@@ -113,19 +108,18 @@ let g:Imap_UsePlaceHolders = 0
 let g:Tex_SmartKeyDoti = 0
 
 let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy']
-let g:syntastic_clang_check_config_file ='.syntastic_cfg'
-let g:syntastic_clang_tidy_config_file ='.syntastic_cfg'
-let g:syntastic_cpp_clang_tidy_post_args = "-checks='-misc-use-override,-llvm-namespace-comment'"
+let g:syntastic_cpp_clang_check_args = '-extra-arg=-std=c++11'
+"let g:syntastic_cpp_clang_tidy_post_args = "-checks='-misc-use-override,-llvm-namespace-comment'"
 let g:syntastic_cpp_check_header=1
 let g:syntastic_always_populate_loc_list = 0
 "let g:syntastic_debug=1
 "let g:syntastic_cpp_clang_check_post_args = '-analyze'
 "Fix "E924: Current window was closed"
-let g:syntastic_auto_loc_list = 3
+"let g:syntastic_auto_loc_list = 3
 
 let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol = '▶✘'
-let g:syntastic_warning_symbol = '▶❓'
+let g:syntastic_error_symbol = '✘▶'
+let g:syntastic_warning_symbol = '☢▶'
 let g:syntastic_style_error_symbol = 'ᐅᐅ'
 let g:syntastic_style_warning_symbol = 'ᐅᐅ'
 "hi clear SignColumn
@@ -143,11 +137,9 @@ let g:clang_auto_user_options = "compile_commands.json"
 set conceallevel=2
 set concealcursor=vin
 let g:clang_snippets=1
-let g:clang_conceal_snippets=1
-" " The single one that works with clang_complete
-let g:clang_snippets_engine='clang_complete'
-"let g:clang_snippets_engine='ultisnips'
-"let g:clang_library_path='/usr/lib/llvm-3.5/lib'
+"let g:clang_conceal_snippets=1
+"let g:clang_snippets_engine='clang_complete'
+let g:clang_snippets_engine='ultisnips'
 let g:clang_library_path='/usr/lib/x86_64-linux-gnu'
 set completeopt-=preview
 let g:clang_debug=0
@@ -155,7 +147,7 @@ let g:clang_debug=0
 let g:UltiSnipsListSnippets="<c-l>"
 let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips/UltiSnips'
 
-let g:clang_format#command='clang-format-3.8'
+let g:clang_format#command='clang-format'
 let g:clang_format#style_options = {
     \ "Language" : "Cpp",
     \ "AccessModifierOffset" : -4,
