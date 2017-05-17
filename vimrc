@@ -30,6 +30,7 @@ Plugin 'lyuts/vim-rtags'
 Plugin 'gioele/vim-autoswap'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/SpellCheck'
@@ -93,6 +94,10 @@ nmap <silent> <F4> :bd<CR>
 nmap <silent> <F7> :SpellCheck<CR>
 nmap <silent> <F8> :set nospell<CR>
 nmap <silent> <F10> :ClangFormat<CR>
+
+"surround
+xnoremap <leader>s) xi()<Esc>P
+xnoremap <leader>s} xi{}<Esc>P
 
 "Highlight errors
 hi clear SpellBad
