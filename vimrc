@@ -22,7 +22,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'vim-scripts/grep.vim'
 Plugin 'vim-scripts/a.vim'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Raimondi/delimitMate'
+Plugin 'cohama/lexima.vim'
+let g:lexima_accept_pum_with_enter = 1
 Plugin 'sjbach/lusty'
 Plugin 'dbakker/vim-projectroot'
 Plugin 'honza/vim-snippets'
@@ -45,8 +46,9 @@ filetype plugin indent on
 filetype on
 syntax on
 
+set background=dark
 set t_Co=256
-colorscheme dante_modified
+"colorscheme dante_modified
 let g:airline_powerline_fonts = 1
 "Display statusline all the time
 set laststatus=2
