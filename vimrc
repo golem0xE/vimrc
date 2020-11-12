@@ -114,26 +114,40 @@ set grepprg=grep\ -nH\ $*
 let g:Imap_UsePlaceHolders = 0
 let g:Tex_SmartKeyDoti = 0
 
-let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy']
-let g:syntastic_cpp_clang_check_args = '-extra-arg=-std=c++11'
-"let g:syntastic_cpp_clang_tidy_post_args = "-checks='-misc-use-override,-llvm-namespace-comment'"
+"let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy']
+"let g:syntastic_c_checkers = ['clang_check', 'clang_tidy']
+let g:syntastic_cpp_checkers = ['check']
+let g:syntastic_c_checkers = ['check']
+let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_cpp_check_header=1
-let g:syntastic_always_populate_loc_list = 0
-"let g:syntastic_debug=1
-"let g:syntastic_cpp_clang_check_post_args = '-analyze'
-"Fix "E924: Current window was closed"
-"let g:syntastic_auto_loc_list = 3
+let g:syntastic_c_check_header=1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": [],
+    \ "passive_filetypes": [] }
+let g:syntastic_auto_jump = 1
+"let g:syntastic_debug=2
 
 let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol = '✘▶'
 let g:syntastic_warning_symbol = '☢▶'
 let g:syntastic_style_error_symbol = 'ᐅᐅ'
 let g:syntastic_style_warning_symbol = 'ᐅᐅ'
-"hi clear SignColumn
+
 hi SyntasticErrorSign ctermfg=9
 hi SyntasticWarningSign ctermfg=yellow
 hi SyntasticStyleErrorSign ctermfg=cyan
 hi SyntasticStyleWarningSign ctermfg=69
+
+nmap <leader>sc :SyntasticCheck<CR>
+nmap <leader>sr :SyntasticReset<CR>
+
+map <leader>ns :lnext<CR>
+map <leader>ps :lprevious<CR>
 
 let g:clang_user_options = '-std=c++11'
 let g:clang_use_library = 1
@@ -147,37 +161,21 @@ let g:clang_snippets=1
 "let g:clang_conceal_snippets=1
 "let g:clang_snippets_engine='clang_complete'
 let g:clang_snippets_engine='ultisnips'
-let g:clang_library_path='/usr/lib/x86_64-linux-gnu'
+"let g:clang_library_path='/usr/lib/x86_64-linux-gnu'
 set completeopt-=preview
 let g:clang_debug=0
+let g:clang_diagsopt = ''
 
 let g:UltiSnipsListSnippets="<c-l>"
 let g:UltiSnipsSnippetsDir='~/.vim/bundle/ultisnips/UltiSnips'
 
 let g:clang_format#command='clang-format'
-let g:clang_format#style_options = {
-    \ "Language" : "Cpp",
-    \ "AccessModifierOffset" : -4,
-    \ "UseTab" : "Never",
-    \ "BreakBeforeBraces" : "Allman",
-    \ "AllowShortIfStatementsOnASingleLine" : "false",
-    \ "AllowShortFunctionsOnASingleLine" : "true",
-    \ "AllowShortLoopsOnASingleLine" : "false",
-    \ "BreakConstructorInitializersBeforeComma" : "false",
-    \ "AlignEscapedNewlinesLeft" : "true",
-    \ "IndentCaseLabels" : "true",
-    \ "ColumnLimit" : 90,
-    \ "IndentWidth" : 4,
-    \ "NamespaceIndentation" : "None",
-    \ "MaxEmptyLinesToKeep" : 1,
-    \ "PointerBindsToType" : "true",
-    \ "SpaceBeforeParens" : "ControlStatements",
-    \ "SpaceBeforeAssignmentOperators" : "true",
-    \ "SpaceInEmptyParentheses" : "false",
-    \ "SpacesInParentheses" : "false",
-    \ "Cpp11BracedListStyle" : "true",
-    \ "Standard" : "Auto"}
-autocmd FileType c,cpp,h,hpp map <buffer><Leader>x <Plug>(operator-clang-format)
+let g:clang_format#detect_style_file = 1
+
+" if you install vim-operator-user
+autocmd FileType c,cpp,h,hpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 let delimitMate_expand_cr = 1
 
